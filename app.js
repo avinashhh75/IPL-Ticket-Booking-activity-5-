@@ -83,6 +83,7 @@ bookingForm.addEventListener("submit", function(event) {
         preference.value;
 
     document.getElementById("sTotal").textContent = total;
+    showToast("Booking summary updated!");
 
     // Show Booking Summary
     document.getElementById("bookingSummary").style.display = "block";
@@ -94,6 +95,23 @@ bookingForm.addEventListener("submit", function(event) {
 
 });
 
+// Activity 7 - Live Interaction
+
+const matchInput = document.getElementById("match");
+const standInput = document.getElementById("stand");
+const ticketsInput = document.getElementById("tickets");
+
+matchInput.addEventListener("change", function () {
+    bookingForm.requestSubmit();
+});
+
+standInput.addEventListener("change", function () {
+    bookingForm.requestSubmit();
+});
+
+ticketsInput.addEventListener("input", function () {
+    bookingForm.requestSubmit();
+});
 // Confirm Booking
 function confirmBooking() {
     alert("Your IPL Ticket Booking is Confirmed Successfully!");
